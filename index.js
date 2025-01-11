@@ -9,7 +9,7 @@ app.use(router);
 
 // Add a new route that matches GET requests to / path
 router.get(
-  "/",
+  "/metrics",
   defineEventHandler(async (event) => {
     const res = await fetch(
       `https://wcproducts.com/products/wcp-0897?variant=43537340694740`
