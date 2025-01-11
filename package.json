@@ -1,0 +1,7 @@
+{
+   "type": "module",
+  "dependencies": {
+    "h3": "^1.13.1",
+    "listhen": "^1.9.0"
+  }
+}
