@@ -19,7 +19,7 @@ router.get(
       /global_quantity\[43537340694740\] = 'continue' \+ ([1-9]+);/gm
     ).exec(html);
 
-    return { count: parseInt(match[1]) };
+    return `bearing_block_count ${match[1]}`;
   })
 );
 await listen(toNodeListener(app));
