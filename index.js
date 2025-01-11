@@ -1,4 +1,4 @@
-import { createApp, createRouter, defineEventHandler, toNodeListener } from "h3";
+import { createApp, createRouter, defineEventHandler, toNodeListener,appendResponseHeader } from "h3";
 import { listen } from "listhen";
 // Create an app instance
 export const app = createApp();
@@ -11,6 +11,8 @@ app.use(router);
 router.get(
   "/metrics",
   defineEventHandler(async (event) => {
+   appendResponseHeader(event, "content-type", "text/plain");
+
     const res = await fetch(
       `https://wcproducts.com/products/wcp-0897?variant=43537340694740`
     );
